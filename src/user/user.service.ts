@@ -52,11 +52,11 @@ export class UserService {
   }
 
   async findOneById(id: number): Promise<User | undefined> {
-    return this.userRepository.findOneBy({ id: id });
+    return await this.userRepository.findOneBy({ id: id });
   }
 
   async update(createUserDto: User): Promise<User> {
-    return this.userRepository.save(createUserDto);
+    return await this.userRepository.save(createUserDto);
   }
 
   async delete(id: number): Promise<DeleteResult> {
