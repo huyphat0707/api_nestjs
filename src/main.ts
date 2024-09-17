@@ -12,6 +12,8 @@ async function bootstrap() {
     .setVersion('1.0')
     .addTag('Auth')
     .addTag('User')
+    .addTag('Category')
+    .addTag('Post')
     .addBearerAuth()
     .build();
 
