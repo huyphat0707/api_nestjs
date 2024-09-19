@@ -23,7 +23,7 @@ export class UserService {
         { lastName: Like('%' + keyword + '%') },
         { email: Like('%' + keyword + '%') },
       ],
-      order: { createdAt: 'DESC' },
+      order: { created_at: 'DESC' },
       take: items_per_page,
       skip: skip,
       select: [
@@ -31,8 +31,8 @@ export class UserService {
         'firstName',
         'lastName',
         'email',
-        'createdAt',
-        'updatedAt',
+        'created_at',
+        'updated_at',
       ],
     });
     const lastPage = Math.ceil(total / items_per_page);

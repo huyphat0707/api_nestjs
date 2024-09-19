@@ -47,10 +47,10 @@ export class User {
   refresh_token: string;
 
   @CreateDateColumn()
-  createdAt: Date;
+  created_at: Date;
 
   @CreateDateColumn()
-  updatedAt: Date;
+  updated_at: Date;
 
   @OneToMany(() => Post, (post) => post.user)
   posts: Post[];
