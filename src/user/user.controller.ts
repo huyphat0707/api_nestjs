@@ -1,4 +1,8 @@
-import { UserService } from 'src/user/user.service';
+import { RolesGuard } from './../roles/roles.guard';
+import { UserService } from './user.service';
+import { AuthGuard } from './../auth/auth.guard';
+import { Roles } from './../roles/roles.decorator';
+import { Role } from './../../enums/role.enum';
 import {
   Body,
   Controller,
@@ -11,10 +15,6 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { User } from './entities/user.entity';
-import { Role } from 'enums/role.enum';
-import { Roles } from 'src/roles/roles.decorator';
-import { AuthGuard } from 'src/auth/auth.guard';
-import { RolesGuard } from 'src/roles/roles.guard';
 import { ApiBearerAuth, ApiQuery, ApiTags } from '@nestjs/swagger';
 import { DeleteResult } from 'typeorm';
 import { FilterUserDto } from './dto/filter-user.dto';
