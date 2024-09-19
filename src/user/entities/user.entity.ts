@@ -1,5 +1,5 @@
+import { Role } from './../../../enums/role.enum';
 import { Post } from './../../post/entities/post.entity';
-import { Role } from 'enums/role.enum';
 import {
   Entity,
   Column,
