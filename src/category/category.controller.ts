@@ -1,3 +1,7 @@
+import { Role } from './../../enums/role.enum';
+import { Roles } from './../roles/roles.decorator';
+import { AuthGuard } from './../auth/auth.guard';
+import { RolesGuard } from './../roles/roles.guard';
 import {
   Body,
   Controller,
@@ -10,11 +14,8 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { ApiBearerAuth, ApiQuery, ApiTags } from '@nestjs/swagger';
-import { AuthGuard } from 'src/auth/auth.guard';
-import { RolesGuard } from 'src/roles/roles.guard';
+
 import { CategoryService } from './category.service';
-import { Roles } from 'src/roles/roles.decorator';
-import { Role } from 'enums/role.enum';
 import { Category } from './entities/category.entity';
 import { FilterCategoryDto } from './dto/filter-category.dto';
 import { CreateCategoryDto } from './dto/create-category.dto';

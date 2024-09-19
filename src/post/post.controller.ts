@@ -1,3 +1,5 @@
+import { RolesGuard } from './../roles/roles.guard';
+import { AuthGuard } from './../auth/auth.guard';
 import { storageConfig } from './../../helpers/config';
 import {
   BadRequestException,
@@ -16,8 +18,6 @@ import {
 } from '@nestjs/common';
 import { PostService } from './post.service';
 import { CreatePostDTO } from './dto/create-post.dto';
-import { RolesGuard } from 'src/roles/roles.guard';
-import { AuthGuard } from 'src/auth/auth.guard';
 import { FileInterceptor } from '@nestjs/platform-express';
 import {
   ApiBearerAuth,
