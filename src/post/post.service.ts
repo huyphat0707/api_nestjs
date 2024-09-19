@@ -37,7 +37,7 @@ export class PostService {
           },
         },
       ],
-      order: { createdAt: 'DESC' },
+      order: { created_at: 'DESC' },
       take: items_per_page,
       skip: skip,
       relations: {
@@ -57,7 +57,6 @@ export class PostService {
         },
       },
     });
-    console.log(res);
 
     const lastPage = Math.ceil(total / items_per_page);
     const nextPage = page + 1 > lastPage ? null : page + 1;

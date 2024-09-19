@@ -8,11 +8,15 @@ import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import { PostModule } from './post/post.module';
 import { CategoryModule } from './category/category.module';
+import { ProductModule } from './product/product.module';
+import { ScheduleModule } from '@nestjs/schedule';
+import { CronService } from './cron/cron.service';
 
 @Module({
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, CronService],
   imports: [
+    ScheduleModule.forRoot(),
     TypeOrmModule.forRoot(dataSourceOptions),
     UserModule,
     AuthModule,
@@ -21,6 +25,7 @@ import { CategoryModule } from './category/category.module';
     }),
     PostModule,
     CategoryModule,
+    ProductModule,
   ],
 })
 export class AppModule {}

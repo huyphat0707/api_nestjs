@@ -1,6 +1,5 @@
 import { Category } from './../../category/entities/category.entity';
 import { IsOptional } from 'class-validator';
-import { Role } from 'enums/role.enum';
 import { User } from 'src/user/entities/user.entity';
 import {
   Entity,
@@ -31,10 +30,10 @@ export class Post {
   status: number;
 
   @CreateDateColumn()
-  createdAt: Date;
+  created_at: Date;
 
   @CreateDateColumn()
-  updatedAt: Date;
+  updated_at: Date;
 
   @ManyToOne(() => User, (user) => user.posts, {
     onDelete: 'CASCADE',
