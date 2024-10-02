@@ -1,7 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { IsOptional } from 'class-validator';
-import { Category } from 'src/category/entities/category.entity';
-import { User } from 'src/user/entities/user.entity';
+import { Category } from 'src/pages/category/entities/category.entity';
+import { User } from 'src/pages/user/entities/user.entity';
 
 export class CreatePostDTO {
   @ApiProperty()

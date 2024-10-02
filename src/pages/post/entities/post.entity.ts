@@ -1,6 +1,6 @@
 import { Category } from './../../category/entities/category.entity';
 import { IsOptional } from 'class-validator';
-import { User } from 'src/user/entities/user.entity';
+import { User } from 'src/pages/user/entities/user.entity';
 import {
   Entity,
   Column,

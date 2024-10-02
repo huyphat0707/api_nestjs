@@ -1,6 +1,6 @@
 import { RolesGuard } from './../roles/roles.guard';
 import { AuthGuard } from './../auth/auth.guard';
-import { storageConfig } from './../../helpers/config';
+import { storageConfig } from '../../helpers/config';
 import {
   BadRequestException,
   Body,
