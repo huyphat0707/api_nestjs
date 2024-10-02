@@ -1,4 +1,4 @@
-import { Role } from './../../../enums/role.enum';
+import { Role } from '../../../enums/role.enum';
 import { Post } from './../../post/entities/post.entity';
 import {
   Entity,

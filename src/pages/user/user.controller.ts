@@ -2,7 +2,7 @@ import { RolesGuard } from './../roles/roles.guard';
 import { UserService } from './user.service';
 import { AuthGuard } from './../auth/auth.guard';
 import { Roles } from './../roles/roles.decorator';
-import { Role } from './../../enums/role.enum';
+import { Role } from '../../enums/role.enum';
 import {
   Body,
   Controller,

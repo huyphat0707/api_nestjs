@@ -1,4 +1,4 @@
-import { Category } from 'src/category/entities/category.entity';
+import { Category } from 'src/pages/category/entities/category.entity';
 
 export class UpdatePostDTO {
   title: string;
