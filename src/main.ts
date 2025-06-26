@@ -19,19 +19,19 @@ async function bootstrap() {
     .addTag('User')
     .addTag('Category')
     .addTag('Post')
+    .addTag('Movie')
     .addBearerAuth()
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document, {
-    customJs: [
-      '/swagger-ui-bundle.js',
-      '/swagger-ui-standalone-preset.js',
-    ],
+    customJs: ['/swagger-ui-bundle.js', '/swagger-ui-standalone-preset.js'],
     customCssUrl: '/swagger-ui.css',
   });
 
   const PORT = process.env.PORT || 3000;
+  console.log(`Server is running on port ${PORT}`);
+  console.log(`Swagger is available at http://localhost:${PORT}/api`);
   await app.listen(PORT);
 }
 bootstrap();

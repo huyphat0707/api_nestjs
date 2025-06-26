@@ -10,7 +10,10 @@ import { PostModule } from './pages/post/post.module';
 import { CategoryModule } from './pages/category/category.module';
 import { ProductModule } from './pages/product/product.module';
 import { ScheduleModule } from '@nestjs/schedule';
-import { CronService } from './pages/cron/cron.service';
+import { CronService } from './cron/cron.service';
+import { MovieModule } from './pages/movie/movie.module';
+import { HttpModule } from '@nestjs/axios';
+import { Movie } from './pages/movie/entities/movie.entity';
 
 @Module({
   controllers: [AppController],
@@ -26,6 +29,9 @@ import { CronService } from './pages/cron/cron.service';
     PostModule,
     CategoryModule,
     ProductModule,
+    MovieModule,
+    HttpModule,
+    TypeOrmModule.forFeature([Movie]),
   ],
 })
 export class AppModule {}

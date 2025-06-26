@@ -64,11 +64,13 @@ export class PostService {
 
     return {
       data: res,
-      total,
-      currentPage: page,
-      nextPage,
-      prevPage,
-      lastPage,
+      pagination: {
+        total,
+        currentPage: page,
+        nextPage,
+        prevPage,
+        lastPage,
+      },
     };
   }
 
