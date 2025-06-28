@@ -5,6 +5,7 @@ import { firstValueFrom } from 'rxjs';
 import { Movie } from 'src/pages/movie/entities/movie.entity';
 import { Repository } from 'typeorm';
 import { Cron, CronExpression } from '@nestjs/schedule';
+import { CrawlerService } from 'src/crawler/crawler.service';
 
 @Injectable()
 export class CronService {
@@ -13,11 +14,12 @@ export class CronService {
   constructor(
     private readonly httpService: HttpService,
     @InjectRepository(Movie) private movieRepository: Repository<Movie>,
+    private readonly crawler: CrawlerService,
   ) {}
 
   async onModuleInit() {
     this.logger.log('Cron service initialized');
-    // await this.getMovies();
+    // this.crawler.crawlAllPages();
   }
 
 //   @Cron(CronExpression.EVERY_10_MINUTES)

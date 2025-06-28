@@ -51,8 +51,8 @@ export class PostService {
         },
         user: {
           id: true,
-          firstName: true,
-          lastName: true,
+          first_name: true,
+          last_name: true,
           email: true,
         },
       },
@@ -101,8 +101,8 @@ export class PostService {
         },
         user: {
           id: true,
-          firstName: true,
-          lastName: true,
+          first_name: true,
+          last_name: true,
           email: true,
         },
       },

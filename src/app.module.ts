@@ -14,6 +14,9 @@ import { CronService } from './cron/cron.service';
 import { MovieModule } from './pages/movie/movie.module';
 import { HttpModule } from '@nestjs/axios';
 import { Movie } from './pages/movie/entities/movie.entity';
+import { MovieDetailModule } from './pages/movie-detail/movie-detail.module';
+import { CountryModule } from './pages/country/country.module';
+import { CrawlerModule } from './crawler/crawler.module';
 
 @Module({
   controllers: [AppController],
@@ -32,6 +35,9 @@ import { Movie } from './pages/movie/entities/movie.entity';
     MovieModule,
     HttpModule,
     TypeOrmModule.forFeature([Movie]),
+    MovieDetailModule,
+    CountryModule,
+    CrawlerModule,
   ],
 })
 export class AppModule {}

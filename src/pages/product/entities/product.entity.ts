@@ -3,6 +3,7 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
   ManyToOne,
   PrimaryGeneratedColumn,
 } from 'typeorm';
@@ -24,15 +25,15 @@ export class Product {
   @Column({ nullable: true })
   quantity: number;
 
-  @Column({ nullable: true })
-  category_id: number;
-
-  @CreateDateColumn()
+  @CreateDateColumn({ nullable: true })
   created_at: Date;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ nullable: true })
   updated_at: Date;
 
-  @ManyToOne(() => Category, (category) => category.posts)
+  @ManyToOne(() => Category, (category) => category.posts, {
+    onDelete: 'CASCADE',
+  })
+  @JoinColumn({ name: 'category_id' })
   category: Category;
 }
