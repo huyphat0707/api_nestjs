@@ -7,6 +7,7 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   ManyToOne,
+  JoinColumn,
 } from 'typeorm';
 
 @Entity('posts')
@@ -14,32 +15,33 @@ export class Post {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  @IsOptional()
+  @Column({ nullable: true })
   title: string;
 
-  @Column()
-  @IsOptional()
+  @Column({ nullable: true })
   description: string;
 
-  @Column()
-  @IsOptional()
+  @Column({ nullable: true })
   thumbnail: string;
 
   @Column({ type: 'int', default: 1 })
   status: number;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ nullable: true })
   created_at: Date;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ nullable: true })
   updated_at: Date;
 
   @ManyToOne(() => User, (user) => user.posts, {
     onDelete: 'CASCADE',
   })
+  @JoinColumn({ name: 'user_id' })
   user: User;
 
-  @ManyToOne(() => Category, (category) => category.posts)
+  @ManyToOne(() => Category, (category) => category.posts, {
+    onDelete: 'CASCADE',
+  })
+  @JoinColumn({ name: 'category_id' })
   category: Category;
 }

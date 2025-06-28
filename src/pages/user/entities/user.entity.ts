@@ -13,43 +13,43 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  firstName: string;
+  @Column({ nullable: true })
+  first_name: string;
 
-  @Column()
-  lastName: string;
+  @Column({ nullable: true })
+  last_name: string;
 
-  @Column()
+  @Column({ nullable: true })
   email: string;
 
-  @Column()
+  @Column({ nullable: true })
   password: string;
 
   @Column({ default: Role.User })
   roles: Role;
 
   @Column({ default: true })
-  isVerified: boolean;
+  is_verified: boolean;
 
   @Column({ default: true })
-  isEnabled: boolean;
+  is_enabled: boolean;
 
   @Column({ default: false })
-  isLocked: boolean;
+  is_locked: boolean;
 
   @Column({ default: 0 })
-  failedLoginAttempts: number;
+  failed_login_attempts: number;
 
   @Column({ default: true })
-  isActive: boolean;
+  is_active: boolean;
 
-  @Column()
+  @Column({ nullable: true })
   refresh_token: string;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ nullable: true })
   created_at: Date;
 
-  @CreateDateColumn()
+  @CreateDateColumn({ nullable: true })
   updated_at: Date;
 
   @OneToMany(() => Post, (post) => post.user)

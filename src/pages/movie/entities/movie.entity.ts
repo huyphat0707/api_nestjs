@@ -1,26 +1,27 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { MovieDetail } from 'src/pages/movie-detail/entities/movie-detail.entity';
+import { Entity, Column, PrimaryGeneratedColumn, OneToOne } from 'typeorm';
 
 @Entity('movies')
 export class Movie {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column({ nullable: true })
   name: string;
 
-  @Column()
+  @Column({ unique: true })
   slug: string;
 
-  @Column()
+  @Column({ nullable: true })
   origin_name: string;
 
-  @Column()
+  @Column({ nullable: true })
   thumb_url: string;
 
-  @Column()
+  @Column({ nullable: true })
   poster_url: string;
 
-  @Column()
+  @Column({ nullable: true })
   year: number;
 
   @Column({ type: 'json', nullable: true })
@@ -31,4 +32,7 @@ export class Movie {
 
   @Column({ type: 'datetime', nullable: true })
   modified_time: Date;
+
+  @OneToOne(() => MovieDetail, (detail) => detail.movie)
+  movie_detail: MovieDetail;
 }
